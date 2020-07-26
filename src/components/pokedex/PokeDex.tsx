@@ -5,7 +5,7 @@ import PokeCard from './PokeCard';
 
 interface Props {
 	pokedex: Pokemon[];
-	topDex: boolean;
+	winDex: boolean;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
 	})
 );
 
-const PokeDex: React.FunctionComponent<Props> = ({ pokedex, topDex }) => {
+const PokeDex: React.FunctionComponent<Props> = ({ pokedex, winDex }) => {
 	const classes = useStyles();
 
 	const renderDex = () => {
@@ -47,9 +47,9 @@ const PokeDex: React.FunctionComponent<Props> = ({ pokedex, topDex }) => {
 
 	return (
 		<Grid container spacing={4} item direction="row" justify="center" alignItems="center">
-			<AppBar position="static" color={topDex ? 'primary' : 'secondary'}>
-				<Typography className={classes.title} variant="h6">
-					Hand - {topDex ? 'One' : 'Two'}
+			<AppBar position="relative" color={winDex ? 'primary' : 'secondary'}>
+				<Typography align="center" className={classes.title} variant="h4">
+					{winDex ? 'Winning Hand' : 'Losing Hand'}
 				</Typography>{' '}
 			</AppBar>
 			{renderDex()}

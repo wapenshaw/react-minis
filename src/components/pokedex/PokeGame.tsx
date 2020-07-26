@@ -1,4 +1,4 @@
-import { Backdrop, CircularProgress, Grid, Snackbar, Typography } from '@material-ui/core';
+import { Backdrop, CircularProgress, Grid, Snackbar, Typography, Button } from '@material-ui/core';
 import React, { Component } from 'react';
 import { getTenPokemonFromAPI } from './api/helpers';
 import { Pokemon } from './api/types';
@@ -25,7 +25,8 @@ class PokeGame extends Component<Props, State> {
 		return dex.reduce((acc, cur) => acc + cur.base_experience, 0);
 	};
 
-	componentDidMount(): void {
+	getDexAndUpdate = (): void => {
+		this.setState({ isLoading: true });
 		getTenPokemonFromAPI().then((res) =>
 			this.setState({
 				topDex: res.slice(0, 5),
@@ -35,8 +36,10 @@ class PokeGame extends Component<Props, State> {
 				botExp: this.calculateDexExp(res.slice(5, 10)),
 			})
 		);
+	};
 
-		console.log('Mounted');
+	componentDidMount(): void {
+		this.getDexAndUpdate();
 	}
 
 	render(): React.ReactNode {
@@ -51,19 +54,36 @@ class PokeGame extends Component<Props, State> {
 			);
 		} else
 			return (
-				<Grid spacing={2} container direction="column">
-					<PokeDex topDex pokedex={this.state.topDex} />
-					<PokeDex topDex={false} pokedex={this.state.botDex} />
-					<Grid container spacing={4} item direction="row" justify="center" alignItems="center">
-						<Snackbar
-							open
-							message={
-								this.state.topExp > this.state.botExp
-									? `Top Hand Wins! ${this.state.topExp} > ${this.state.botExp}`
-									: `Bottom Hand Wins! ${this.state.topExp} < ${this.state.botExp}`
-							}
-						/>
+				<Grid spacing={2} container style={{ padding: '20px' }} direction="column">
+					<PokeDex winDex={this.state.topExp > this.state.botExp} pokedex={this.state.topDex} />
+					<PokeDex winDex={this.state.topExp < this.state.botExp} pokedex={this.state.botDex} />
+					<Grid
+						container
+						style={{ padding: '20px', margin: '10px' }}
+						spacing={4}
+						item
+						direction="row"
+						justify="center"
+						alignItems="center"
+					>
+						<Button
+							style={{ padding: '10px', margin: '10px' }}
+							onClick={this.getDexAndUpdate}
+							variant="contained"
+							color="primary"
+						>
+							Get a Fresh Set!
+						</Button>
 					</Grid>
+					<Snackbar
+						open
+						anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
+						message={
+							this.state.topExp > this.state.botExp
+								? `Top Hand Wins! ${this.state.topExp} > ${this.state.botExp}`
+								: `Bottom Hand Wins! ${this.state.topExp} < ${this.state.botExp}`
+						}
+					/>
 				</Grid>
 			);
 	}
