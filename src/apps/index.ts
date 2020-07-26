@@ -1,0 +1,1 @@
+export { PokeGame } from './pokemon/';
