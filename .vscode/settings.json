@@ -21,12 +21,11 @@
 		"source.fixAll": false,
 		"source.organizeImports": false
 	},
-
+	"path-intellisense.extensionOnImport": false,
 	// Intellicode Settings
 	"vsintellicode.python.completionsEnabled": false,
 	"vsintellicode.sql.completionsEnabled": false,
 	"vsintellicode.features.python.deepLearning": "disabled",
 	"vsintellicode.java.completionsEnabled": false,
-	"editor.renameOnType": true,
-
+	"editor.renameOnType": true
 }

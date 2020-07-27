@@ -1,14 +1,13 @@
 import { Container } from '@material-ui/core';
 import React from 'react';
 import './App.css';
-import { Board } from './apps/diceroll';
-import { PokeGame } from './apps';
+import { Palette } from './apps';
 
 const App: React.FunctionComponent = () => {
 	return (
 		<Container maxWidth="lg">
-			<Board />
-			<PokeGame></PokeGame>
+			<h1 className="">React Minis</h1>
+			<Palette boxNum={18} />
 		</Container>
 	);
 };
