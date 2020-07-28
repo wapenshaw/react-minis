@@ -44,8 +44,8 @@ class TodoItem extends Component<Props, State> {
 		let frag;
 		if (this.state.editable) {
 			frag = (
-				<div className="">
-					<form action="" onSubmit={this.saveEdit}>
+				<div className="Todo">
+					<form className="Todo-editform" action="" onSubmit={this.saveEdit}>
 						<input
 							type="text"
 							name=""
@@ -61,11 +61,17 @@ class TodoItem extends Component<Props, State> {
 			frag = (
 				<li
 					onClick={this.toggleComplete}
-					className={this.state.completed ? 'todoDone' : 'todoNotDone'}
+					className={this.state.completed ? 'Todo-task completed' : 'Todo-task'}
 				>
 					<span>{this.state.todoText}</span> <span>{this.props.completed}</span>
-					<button onClick={this.toggleEdit}>E</button>
-					<button onClick={this.handleDelete}>X</button>
+					<div className="Todo-buttons">
+						<button onClick={this.toggleEdit}>
+							<i className="fas fa-pen"></i>
+						</button>
+						<button onClick={this.handleDelete}>
+							<i className="fas fa-trash"></i>
+						</button>
+					</div>
 				</li>
 			);
 		}

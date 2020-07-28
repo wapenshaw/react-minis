@@ -2,6 +2,7 @@ import React, { Component, ReactFragment } from 'react';
 import TodoForm from './TodoForm';
 import TodoItem from './TodoItem';
 import { Todo } from './types';
+import './TodoList.css';
 
 interface Props {}
 interface State {
@@ -62,11 +63,12 @@ export default class TodoList extends Component<Props, State> {
 
 	render(): React.ReactNode {
 		return (
-			<div>
-				{this.renderTodos()}
-				<ul className="todoList">
-					<TodoForm formHandler={this.addTodo} />
-				</ul>
+			<div className="Todolist">
+				<h1>
+					React Todo List <span>in Typescript React!</span>{' '}
+				</h1>
+				<ul>{this.renderTodos()}</ul>
+				<TodoForm formHandler={this.addTodo} />
 			</div>
 		);
 	}

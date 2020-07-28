@@ -13,6 +13,8 @@
 	"eslint.alwaysShowStatus": true,
 	"helium-icon-theme.activeIconPack": "react_redux",
 
+	"eslint.packageManager": "yarn",
+
 	// Fomatting Settings.
 	"editor.defaultFormatter": "esbenp.prettier-vscode", // Set Prettier as the default formatter
 	"editor.formatOnSave": true,
