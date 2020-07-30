@@ -15,14 +15,18 @@
 
 	"eslint.packageManager": "yarn",
 
+	"editor.autoClosingBrackets": "languageDefined",
+	"editor.autoClosingOvertype": "auto",
+
 	// Fomatting Settings.
 	"editor.defaultFormatter": "esbenp.prettier-vscode", // Set Prettier as the default formatter
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"editor.codeActionsOnSave": {
-		"source.fixAll": false,
+		"source.fixAll": true,
 		"source.organizeImports": false
 	},
+	"sophon-intellisense.agreeToCollectUserInfo": false,
 	"path-intellisense.extensionOnImport": false,
 	// Intellicode Settings
 	"vsintellicode.python.completionsEnabled": false,
