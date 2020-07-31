@@ -21,6 +21,7 @@ export default class Joke extends Component<Props, State> {
 		else if (this.props.votes >= 0) return '#FF9800';
 		else return '#F44336';
 	};
+
 	getEmoji = (): string => {
 		if (this.props.votes >= 15) return 'em em-rolling_on_the_floor_laughing';
 		else if (this.props.votes >= 12) return 'em em-laughing';

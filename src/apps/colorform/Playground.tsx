@@ -29,7 +29,6 @@ class Playground extends Component<Props, State> {
 	};
 
 	removeBox = (boxId: string): void => {
-		console.log('remove box', event);
 		this.setState((st) => ({
 			boxes: st.boxes.filter((box) => box.id !== boxId),
 		}));

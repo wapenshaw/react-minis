@@ -31,7 +31,7 @@ export default class JokeList extends Component<Props, State> {
 		try {
 			const jokes: JOKE[] = [];
 			while (jokes.length < this.standardProps.numJokesToGet) {
-				const response = await Axios.get('https://icanh2azdadjoke.com/', {
+				const response = await Axios.get('https://icanhazdadjoke.com/', {
 					headers: {
 						Accept: 'application/json',
 					},
