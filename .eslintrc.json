@@ -1,7 +1,8 @@
 {
 	"env": {
 		"browser": true,
-		"es6": true
+		"es6": true,
+		"jest": true
 	},
 	"extends": [
 		"standard",
@@ -21,10 +22,10 @@
 		"ecmaFeatures": {
 			"jsx": true
 		},
-		"ecmaVersion": 2018,
-		"sourceType": "module"
+		"project": "tsconfig.json",
+		"tsconfigRootDir": "."
 	},
-	"plugins": ["react", "react-hooks", "@typescript-eslint"],
+	"plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
 	"rules": {
 		"camelcase": "off",
 		"no-unused-expressions": "off",
@@ -55,6 +56,14 @@
 		"@typescript-eslint/no-empty-interface": "off",
 		"jsx-a11y/no-static-element-interactions": "off",
 		"jsx-a11y/click-events-have-key-events": "off",
+		"prettier/prettier": [
+			"warn",
+			{
+				"endOfLine": "crlf"
+			},
+			{ "usePrettierrc": true }
+		],
+
 		// Remove After
 
 		"jsx-quotes": "warn",

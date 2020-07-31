@@ -9,6 +9,15 @@
 	"problems.decorations.enabled": true, // Error highlighing in explorer view
 	"files.autoSave": "off", // Just so that when you have the dev server running, any focus change will save -> recompile
 
+	"files.exclude": {
+		"**/.DS_Store": true,
+		"**/.git": true,
+		"**/node_modules": true
+	},
+	"search.exclude": {
+		"**/node_modules": true
+	},
+
 	// Extension Specific settings
 	"eslint.alwaysShowStatus": true,
 	"helium-icon-theme.activeIconPack": "react_redux",
@@ -33,5 +42,7 @@
 	"vsintellicode.sql.completionsEnabled": false,
 	"vsintellicode.features.python.deepLearning": "disabled",
 	"vsintellicode.java.completionsEnabled": false,
-	"editor.renameOnType": true
+	"editor.renameOnType": true,
+	"files.eol": "\r\n",
+	"files.trimFinalNewlines": true
 }

@@ -8,6 +8,7 @@ interface Props {
 	upvote: () => void;
 	downvote: () => void;
 }
+
 interface State {}
 
 export default class Joke extends Component<Props, State> {
