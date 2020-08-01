@@ -13,7 +13,7 @@ interface State {
 export default class JokeList extends Component<Props, State> {
 	state: State = {
 		jokes: JSON.parse(window.localStorage.getItem('jokes') || '[]'),
-		loading: false,
+		loading: true,
 	};
 
 	standardProps = {
@@ -23,7 +23,11 @@ export default class JokeList extends Component<Props, State> {
 	seenJokes = new Set<string>();
 
 	componentDidMount = (): void => {
-		if (this.state.jokes.length === 0) this.getJokes();
+		if (this.state.jokes.length === 0) {
+			this.getJokes();
+		} else {
+			this.setState({ loading: false });
+		}
 		this.seenJokes = new Set(this.state.jokes.map((j) => j.id));
 	};
 
@@ -91,9 +95,11 @@ export default class JokeList extends Component<Props, State> {
 	render(): React.ReactNode {
 		if (this.state.loading) {
 			return (
-				<div className="JokeList-Spinner">
-					<i className="far fa-8x fa-laugh fa-spin"></i>
-					<h2 className="JokeList-Title">Loading...</h2>
+				<div className="JokeList">
+					<div className="JokeList-Spinner">
+						<i className="far fa-8x fa-laugh fa-spin"></i>
+						<h2 className="JokeList-Title">Loading...</h2>
+					</div>
 				</div>
 			);
 		}
@@ -105,7 +111,7 @@ export default class JokeList extends Component<Props, State> {
 					</h1>
 					<img src="./assets/lmao.svg" alt="DadJokes!" />
 					<button onClick={this.handleNewJokes} className="JokeList-getMore">
-						New Jokes!
+						Get More Jokes!
 					</button>
 				</div>
 				<div className="JokeList-Jokes">{this.renderJokes()}</div>

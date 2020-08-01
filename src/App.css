@@ -35,4 +35,6 @@
 
 .App-Comp {
 	align-self: center;
+	display: flex;
+	align-items: center;
 }

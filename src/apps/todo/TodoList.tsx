@@ -67,8 +67,7 @@ export default class TodoList extends Component<Props, State> {
 			<div className="Todolist">
 				<div className="Todo-Header">
 					<h1>
-						React Todo List <span>in Typescript React!</span>
-						<hr />
+						Todo List <span>in Typescript React!</span>
 						<span>Add, edit, delete or mark complete..</span>
 					</h1>
 				</div>
