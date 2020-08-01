@@ -33,6 +33,7 @@ export default class TodoList extends Component<Props, State> {
 		});
 		this.setState({ list: updatedTodos });
 	};
+
 	toggleTodo = (id: string): void => {
 		const updatedTodos = this.state.list.map((todo) => {
 			if (todo.id === id) {
@@ -58,17 +59,21 @@ export default class TodoList extends Component<Props, State> {
 					/>
 				);
 			});
-		} else return <div>No Todos Yet!</div>;
+		} else return <div className="NoTodo">No Todos Yet!</div>;
 	};
 
 	render(): React.ReactNode {
 		return (
 			<div className="Todolist">
-				<h1>
-					React Todo List <span>in Typescript React!</span>{' '}
-				</h1>
-				<ul>{this.renderTodos()}</ul>
+				<div className="Todo-Header">
+					<h1>
+						React Todo List <span>in Typescript React!</span>
+						<hr />
+						<span>Add, edit, delete or mark complete..</span>
+					</h1>
+				</div>
 				<TodoForm formHandler={this.addTodo} />
+				<div className="TodoContainer">{this.renderTodos()}</div>
 			</div>
 		);
 	}

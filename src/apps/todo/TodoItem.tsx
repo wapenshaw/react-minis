@@ -27,14 +27,17 @@ class TodoItem extends Component<Props, State> {
 	handleDelete = (): void => {
 		this.props.remove(this.props.id);
 	};
+
 	handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
 		this.setState({ todoText: event.target.value, id: this.props.id });
 	};
+
 	saveEdit = (event: React.FormEvent<HTMLFormElement>): void => {
 		event.preventDefault();
 		this.props.updateTodo(this.props.id, this.state.todoText);
 		this.setState({ editable: false });
 	};
+
 	toggleComplete = (): void => {
 		this.props.toggleComplete(this.props.id);
 		this.setState({ completed: !this.state.completed });
@@ -44,8 +47,8 @@ class TodoItem extends Component<Props, State> {
 		let frag;
 		if (this.state.editable) {
 			frag = (
-				<div className="Todo">
-					<form className="Todo-editform" action="" onSubmit={this.saveEdit}>
+				<div className="TodoEFrom">
+					<form className="Todo-EditForm" action="" onSubmit={this.saveEdit}>
 						<input
 							type="text"
 							name=""
@@ -53,18 +56,24 @@ class TodoItem extends Component<Props, State> {
 							value={this.state.todoText}
 							onChange={this.handleChange}
 						/>
-						<button type="submit">S</button>
+						<button type="submit">
+							<i className="fas fa-save"></i>
+						</button>
 					</form>
 				</div>
 			);
 		} else {
 			frag = (
-				<li
-					onClick={this.toggleComplete}
-					className={this.state.completed ? 'Todo-task completed' : 'Todo-task'}
-				>
-					<span>{this.state.todoText}</span> <span>{this.props.completed}</span>
-					<div className="Todo-buttons">
+				<div className="Todo-Task">
+					<div
+						onClick={this.toggleComplete}
+						className={
+							this.state.completed ? 'Todo-Text completed' : 'Todo-Text'
+						}
+					>
+						{this.state.todoText}
+					</div>
+					<div className="Todo-Buttons">
 						<button onClick={this.toggleEdit}>
 							<i className="fas fa-pen"></i>
 						</button>
@@ -72,7 +81,7 @@ class TodoItem extends Component<Props, State> {
 							<i className="fas fa-trash"></i>
 						</button>
 					</div>
-				</li>
+				</div>
 			);
 		}
 		return frag;

@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Palette: React.FunctionComponent<Props> = ({ boxNum }) => {
-	const boxes = Array.from({ length: boxNum }).map((b, i) => {
+	const boxes = Array.from({ length: boxNum }).map((_b, i) => {
 		return <ColorBox key={i} />;
 	});
 

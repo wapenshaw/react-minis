@@ -1,44 +1,43 @@
-.Todo {
+.Todo-Task {
+	padding: 0.8rem 0;
 	display: flex;
-	margin: 0 -3rem 4px;
-	padding: 1.1rem 3rem;
-	justify-content: space-between;
-	align-items: center;
-	background: rgba(255, 255, 255, 0.1);
-}
-
-.Todo-task {
-	position: relative;
+	flex-flow: row nowrap;
 	transform: opacity 0.4s linear;
+	align-items: center;
 }
 
-.Todo-task.completed {
-	opacity: 0.6;
-}
-.Todo-task.completed:before {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: -0.5rem;
-	display: block;
-	width: 0%;
-	height: 2px;
-	background: #fff;
-	animation: strikeitem 0.5s ease-out 0s forwards;
+.Todo-Text {
+	padding: 0;
+	background: transparent;
+	color: white;
+	border: 0;
+	outline: 0;
+	border-bottom: 2px solid #d49a3f;
+	font-size: 1rem;
 }
 
-@keyframes strikeitem {
-	to {
-		width: calc(100% + 10px);
-	}
+.Todo-Text:hover {
+	cursor: pointer;
 }
 
-.Todo-buttons {
-	flex-shrink: 0;
-	padding-left: 0.2em;
+.Todo-Text.completed {
+	text-decoration: line-through;
+	color: #aaa;
+	border-bottom: 2px solid rgb(65, 52, 32);
 }
 
-.Todo-buttons button {
+.Todo-Buttons {
+	padding: 0.1rem;
+	background: transparent;
+	color: #d49a3f;
+	margin-left: auto;
+	flex: 0 0 80px;
+	border: 0;
+	outline: 0;
+	font-size: 1rem;
+}
+
+.Todo-Buttons button {
 	border: none;
 	font-size: 1em;
 	margin: 0.4em;
@@ -48,39 +47,42 @@
 	color: #fff;
 }
 
-.Todo-editform {
+.TodoEForm {
+	padding: 0.8rem 0;
 	display: flex;
-	flex-wrap: wrap;
+	flex-flow: row nowrap;
+	transform: opacity 0.4s linear;
+	background: rgba(255, 255, 255, 0.1);
 }
-.Todo-editform label {
-	min-width: 100%;
-	margin-bottom: 0.5rem;
-	font-size: 1.3rem;
+
+.Todo-EditForm {
+	display: flex;
+	flex-wrap: nowrap;
 }
-.Todo-editform input {
-	flex-grow: 1;
+
+.Todo-EditForm input {
+	border-radius: 4px;
+	padding: 0.2em 0.8em;
+	flex: 1 1 75%;
+	outline: none;
 	border: none;
-	background: #f7f1f1;
-	padding: 0 1.5em;
-	font-size: initial;
+	font-size: 1rem;
 }
-.Todo-editform button {
-	padding: 0 1.3rem;
+.Todo-EditForm button {
 	border: none;
-	background: #ff6666;
-	color: white;
-	text-transform: uppercase;
-	font-weight: bold;
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	margin-left: 5px;
+	font-size: 1.5em;
+	margin: 0.4em;
+	margin-left: auto;
+	background: none;
+	-webkit-appearance: none;
 	cursor: pointer;
-	transition: background 0.2s ease-out;
+	color: #fff;
+	border-radius: 4px;
 }
-.Todo-editform button:hover {
-	background: #ff5e5e;
+.Todo-EditForm button:hover {
+	background: #60758a9a;
 }
-.Todo-editform input,
-.Todo-editform button {
+.Todo-EditForm input,
+.Todo-EditForm button {
 	font-family: 'Quicksand', sans-serif;
-	height: 3rem;
 }

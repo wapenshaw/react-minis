@@ -1,15 +1,19 @@
 .Todolist {
-	margin: 4rem auto;
-	padding: 2rem 3rem 3rem;
-	max-width: 500px;
-	background: #ff6666;
-	color: #fff;
-	box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, 0.1);
+	margin-top: 2rem;
+	padding: 1rem 2rem;
+	border-radius: 4px;
+	background: #222930;
+	width: 90%;
+	color: white;
+	overflow: auto;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	flex-flow: column nowrap;
 }
 .Todolist h1 {
-	/*text-align:center;*/
-	font-weight: normal;
-	font-size: 2.6rem;
+	align-self: flex-start;
+	text-align: left;
 	letter-spacing: 0.05em;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -21,7 +25,15 @@
 	margin-top: 0.2rem;
 }
 
-.Todolist .emptylist {
+.NoTodo {
+	color: #efefef;
+	text-align: center;
+}
+
+.TodoContainer {
+	margin-top: 1em;
+}
+/* .Todolist .emptylist {
 	margin-top: 2.6rem;
 	text-align: center;
 	letter-spacing: 0.05em;
@@ -35,3 +47,4 @@
 .Todolist .todolist-move {
 	transition: transform 1s;
 }
+ */

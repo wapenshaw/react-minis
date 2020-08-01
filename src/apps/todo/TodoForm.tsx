@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Todo } from './types';
 import { v4 as uuid } from 'uuid';
+import './TodoForm.css';
 
 interface Props {
 	formHandler: (t: Todo) => void;
@@ -29,15 +30,14 @@ export default class TodoForm extends Component<Props, State> {
 		return (
 			<div className="TodoForm">
 				<form onSubmit={this.handleForm} action="">
-					<label htmlFor="todoitem">Add Todo: </label>
 					<input
 						type="text"
+						placeholder="Add a Todo!"
 						name="todoitem"
 						onChange={this.handleChange}
 						id=""
 						value={this.state.todoText}
 					/>
-					<button type="submit">Add</button>
 				</form>
 			</div>
 		);

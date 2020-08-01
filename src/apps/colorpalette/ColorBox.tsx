@@ -20,11 +20,18 @@ export default class ColorBox extends Component<Props, State> {
 		} while (newColor === this.state.color);
 		this.setState({ color: newColor });
 	};
+
 	handleClick = (): void => {
 		this.pickColor();
 	};
 
 	render(): React.ReactNode {
-		return <div className="Box" onClick={this.handleClick} style={{ backgroundColor: this.state.color }}></div>;
+		return (
+			<div
+				className="Box"
+				onClick={this.handleClick}
+				style={{ backgroundColor: this.state.color }}
+			></div>
+		);
 	}
 }
