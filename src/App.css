@@ -4,39 +4,33 @@
 }
 
 .App-Nav {
-	padding: 1.2rem;
-}
-
-.App-Nav ul {
 	display: flex;
 	justify-content: space-evenly;
+	background-color: #222930;
+	flex-wrap: wrap;
+	border-radius: 7px;
+	margin: 2em 1em;
 }
 
-.App-Nav li {
+.App-NavElement {
+	padding: 0.8rem;
+}
+
+.App-NavElement:hover {
 	display: inline;
-	padding: 0.7rem;
-	border-radius: 0.7rem;
-	background-color: rgba(179, 229, 252, 0.4);
+	background-color: #5c6e815e;
 }
 
-.App-Nav li:hover {
-	display: inline;
-	padding: 0.7rem;
-	cursor: pointer;
-	border-radius: 0.7rem;
-	background-color: rgba(179, 229, 252, 0.4);
-	box-shadow: 0px 2px 6px 4px rgba(0, 0, 0, 0.2);
-}
-
-.App-Nav li a {
-	color: #733fcc;
+.App-NavElement a {
+	color: #c5cacf;
 	font-weight: 500;
+	cursor: pointer;
 	font-size: 1.2rem;
 	text-decoration: none;
 }
 
-.App-Nav ul li a.App-NavActive {
-	color: brown;
+.App-NavElement a.App-NavActive {
+	color: #768da5;
 }
 
 .App-Comp {

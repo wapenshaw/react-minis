@@ -1,9 +1,10 @@
 .Die {
 	font-size: 10em;
-	padding: 0.25;
+	padding: 0;
 	display: flex;
-	color: slateblue;
+	color: #44525f;
 	margin: 20px;
+	margin-top: 0;
 }
 .Rolling {
 	animation-name: wobble;

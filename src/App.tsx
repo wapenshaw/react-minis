@@ -15,43 +15,41 @@ const App: React.FunctionComponent = () => {
 	return (
 		<div className="App">
 			<div className="App-Nav">
-				<ul>
-					<li>
-						<NavLink to="/" exact activeClassName="App-NavActive">
-							Home (Dice)
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/todo" exact activeClassName="App-NavActive">
-							Todo
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/dadjokes" exact activeClassName="App-NavActive">
-							Dad Jokes
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/carddealer" exact activeClassName="App-NavActive">
-							Card Dealer
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/coinflip" exact activeClassName="App-NavActive">
-							Coin Flip
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/colors" exact activeClassName="App-NavActive">
-							Color Palette
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/colorform" exact activeClassName="App-NavActive">
-							Color Form
-						</NavLink>
-					</li>
-				</ul>
+				<div className="App-NavElement">
+					<NavLink to="/" exact activeClassName="App-NavActive">
+						Home (Dice)
+					</NavLink>
+				</div>
+				<div className="App-NavElement">
+					<NavLink to="/todo" exact activeClassName="App-NavActive">
+						Todo
+					</NavLink>
+				</div>
+				<div className="App-NavElement">
+					<NavLink to="/dadjokes" exact activeClassName="App-NavActive">
+						Dad Jokes
+					</NavLink>
+				</div>
+				<div className="App-NavElement">
+					<NavLink to="/carddealer" exact activeClassName="App-NavActive">
+						Card Dealer
+					</NavLink>
+				</div>
+				<div className="App-NavElement">
+					<NavLink to="/coinflip" exact activeClassName="App-NavActive">
+						Coin Flip
+					</NavLink>
+				</div>
+				<div className="App-NavElement">
+					<NavLink to="/colors" exact activeClassName="App-NavActive">
+						Color Palette
+					</NavLink>
+				</div>
+				<div className="App-NavElement">
+					<NavLink to="/colorform" exact activeClassName="App-NavActive">
+						Color Form
+					</NavLink>
+				</div>
 			</div>
 			<div className="App-Comp">
 				<Switch>
