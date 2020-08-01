@@ -1,13 +1,13 @@
 export interface DECK {
 	success: boolean;
-	deck_Id: string;
+	deck_id: string;
 	remaining: number;
 	shuffled: boolean;
 }
 
 export interface CARDS {
 	success: boolean;
-	deck_Id: string;
+	deck_id: string;
 	cards: CARD[];
 	remaining: number;
 }

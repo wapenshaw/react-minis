@@ -15,7 +15,7 @@ interface State {
 class Deck extends Component<Props, State> {
 	state: State = {
 		deck: {
-			deck_Id: '',
+			deck_id: '',
 			remaining: 0,
 			shuffled: false,
 			success: false,
@@ -30,7 +30,7 @@ class Deck extends Component<Props, State> {
 
 	getCard = async (): Promise<void> => {
 		try {
-			const cardURL = `${API_BASE}/${this.state.deck.deck_Id}/draw/`;
+			const cardURL = `${API_BASE}/${this.state.deck.deck_id}/draw/`;
 			const response = await Axios.get(cardURL);
 			const drawnCard = response.data as CARDS;
 			const angle = Math.random() * 90 - 45;
