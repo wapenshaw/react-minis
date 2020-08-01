@@ -47,8 +47,7 @@ class Playground extends Component<Props, State> {
 							}}
 						></div>
 						<button onClick={() => this.removeBox(box.id!)}>
-							{' '}
-							Remove {box.color} box{' '}
+							Remove {box.color} box
 						</button>
 					</div>
 				);

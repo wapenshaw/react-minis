@@ -17,15 +17,24 @@ class CoinFlip extends Component<Props, State> {
 
 	flipCoin = (): void => {
 		if (Math.random() > 0.4) {
-			this.setState((st) => ({ heads: st.heads + 1, tails: st.tails, side: true }));
-		} else this.setState((st) => ({ heads: st.heads, tails: st.tails + 1, side: false }));
+			this.setState((st) => ({
+				heads: st.heads + 1,
+				tails: st.tails,
+				side: true,
+			}));
+		} else
+			this.setState((st) => ({
+				heads: st.heads,
+				tails: st.tails + 1,
+				side: false,
+			}));
 	};
 
 	render(): React.ReactNode {
 		return (
 			<div className="coinflip">
 				<h3>Flip a Coin!</h3>
-				<Coin heads={this.state.side ? true : false} />
+				<Coin heads={!!this.state.side} />
 				<button onClick={this.flipCoin}>Flip!</button>
 				<h4>
 					Heads: {this.state.heads} -- Tails : {this.state.tails}

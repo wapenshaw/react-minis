@@ -1,15 +1,44 @@
 .App {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-	background: linear-gradient(
-		135deg,
-		rgba(179, 229, 252, 1) 0%,
-		rgba(179, 229, 252, 1) 50%,
-		rgba(240, 98, 146, 1) 50%,
-		rgba(240, 98, 146, 1) 100%
-	);
-	font-family: 'Rubik', sans-serif;
-	color: #78909c;
+	flex-flow: column nowrap;
+}
+
+.App-Nav {
+	padding: 1.2rem;
+}
+
+.App-Nav ul {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.App-Nav li {
+	display: inline;
+	padding: 0.7rem;
+	border-radius: 0.7rem;
+	background-color: rgba(179, 229, 252, 0.4);
+}
+
+.App-Nav li:hover {
+	display: inline;
+	padding: 0.7rem;
+	cursor: pointer;
+	border-radius: 0.7rem;
+	background-color: rgba(179, 229, 252, 0.4);
+	box-shadow: 0px 2px 6px 4px rgba(0, 0, 0, 0.2);
+}
+
+.App-Nav li a {
+	color: #733fcc;
+	font-weight: 500;
+	font-size: 1.2rem;
+	text-decoration: none;
+}
+
+.App-Nav ul li a.App-NavActive {
+	color: brown;
+}
+
+.App-Comp {
+	align-self: center;
 }

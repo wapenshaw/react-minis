@@ -43,6 +43,24 @@
 	"vsintellicode.features.python.deepLearning": "disabled",
 	"vsintellicode.java.completionsEnabled": false,
 	"editor.renameOnType": true,
-	"files.eol": "\r\n",
-	"files.trimFinalNewlines": true
+	"files.trimFinalNewlines": true,
+
+	"editor.tokenColorCustomizations": {
+		"[Mowgli]": {
+			"textMateRules": [
+				{
+					"scope": "support.class.component",
+					"settings": {
+						"foreground": "#FF97A3"
+					}
+				},
+				{
+					"scope": "variable.other.readwrite",
+					"settings": {
+						"foreground": "#FCFCA0"
+					}
+				}
+			]
+		}
+	}
 }
