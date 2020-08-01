@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import React, { Component, ReactFragment } from 'react';
 import { DECK, CARDS, CARD } from './types';
 import Axios from 'axios';
@@ -14,7 +15,7 @@ interface State {
 class Deck extends Component<Props, State> {
 	state: State = {
 		deck: {
-			deck_id: '',
+			deck_Id: '',
 			remaining: 0,
 			shuffled: false,
 			success: false,
@@ -29,7 +30,7 @@ class Deck extends Component<Props, State> {
 
 	getCard = async (): Promise<void> => {
 		try {
-			const cardURL = `${API_BASE}/${this.state.deck.deck_id}/draw/`;
+			const cardURL = `${API_BASE}/${this.state.deck.deck_Id}/draw/`;
 			const response = await Axios.get(cardURL);
 			const drawnCard = response.data as CARDS;
 			const angle = Math.random() * 90 - 45;
@@ -61,9 +62,16 @@ class Deck extends Component<Props, State> {
 
 	render(): React.ReactNode {
 		return (
-			<div>
-				<h1>Card Dealer!</h1>
-				<button onClick={this.getCard}>Get Card</button>
+			<div className="Deck">
+				<div className="Deck-Header">
+					<h1>
+						<i className="fas fa-crown"></i> Card Dealer{' '}
+						<i className="fas fa-crown"></i>
+					</h1>
+					<button className="Deck-Button" onClick={this.getCard}>
+						<i className="fas fa-club">DRAW</i>
+					</button>
+				</div>
 				<div className="CardArea">{this.renderCards()}</div>
 			</div>
 		);

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Coin from './Coin';
+import flip from './flip.png';
+import './CoinFlip.css';
 
 interface Props {}
 interface State {
@@ -16,7 +18,7 @@ class CoinFlip extends Component<Props, State> {
 	};
 
 	flipCoin = (): void => {
-		if (Math.random() > 0.4) {
+		if (Math.random() > 0.5) {
 			this.setState((st) => ({
 				heads: st.heads + 1,
 				tails: st.tails,
@@ -32,13 +34,24 @@ class CoinFlip extends Component<Props, State> {
 
 	render(): React.ReactNode {
 		return (
-			<div className="coinflip">
-				<h3>Flip a Coin!</h3>
-				<Coin heads={!!this.state.side} />
-				<button onClick={this.flipCoin}>Flip!</button>
-				<h4>
-					Heads: {this.state.heads} -- Tails : {this.state.tails}
-				</h4>
+			<div className="Coinflip">
+				<div className="CoinSide">
+					<h3>Flip a Coin!</h3>
+					<img
+						onClick={this.flipCoin}
+						style={{ width: '60px', height: '60px' }}
+						src={flip}
+						alt="flip"
+					/>
+					<h4>
+						<i className="fas fa-head-side-virus"></i>
+						{this.state.heads}
+						<i className="fas fa-grip-lines-vertical"></i>
+						{this.state.tails}
+						<i className="fas fa-dragon"></i>
+					</h4>
+				</div>
+				<Coin heads={this.state.side} />
 			</div>
 		);
 	}

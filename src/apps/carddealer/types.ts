@@ -1,13 +1,13 @@
 export interface DECK {
 	success: boolean;
-	deck_id: string;
+	deck_Id: string;
 	remaining: number;
 	shuffled: boolean;
 }
 
 export interface CARDS {
 	success: boolean;
-	deck_id: string;
+	deck_Id: string;
 	cards: CARD[];
 	remaining: number;
 }
@@ -21,6 +21,7 @@ export interface CARD {
 	transformStr?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IMAGES {
 	svg: string;
 	png: string;
