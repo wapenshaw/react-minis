@@ -8,7 +8,7 @@ import {
 	DadJokes,
 	DiceBoard,
 	TodoList,
-	Palette,
+	YoutubeSearch,
 } from './apps';
 
 const App: React.FunctionComponent = () => {
@@ -26,6 +26,11 @@ const App: React.FunctionComponent = () => {
 					</NavLink>
 				</div>
 				<div className="App-NavElement">
+					<NavLink to="/youtube" exact activeClassName="App-NavActive">
+						Youtube
+					</NavLink>
+				</div>
+				<div className="App-NavElement">
 					<NavLink to="/dadjokes" exact activeClassName="App-NavActive">
 						Dad Jokes
 					</NavLink>
@@ -40,11 +45,7 @@ const App: React.FunctionComponent = () => {
 						Coin Flip
 					</NavLink>
 				</div>
-				<div className="App-NavElement">
-					<NavLink to="/colors" exact activeClassName="App-NavActive">
-						Color Palette
-					</NavLink>
-				</div>
+
 				<div className="App-NavElement">
 					<NavLink to="/colorform" exact activeClassName="App-NavActive">
 						Color Form
@@ -59,7 +60,7 @@ const App: React.FunctionComponent = () => {
 					<Route exact path="/coinflip" component={CoinFlip} />
 					<Route exact path="/colorform" component={ColorPlayground} />
 					<Route exact path="/todo" component={TodoList} />
-					<Route exact path="/colors" render={() => <Palette boxNum={6} />} />
+					<Route exact path="/youtube" component={YoutubeSearch} />
 				</Switch>
 			</div>
 		</div>

@@ -1,9 +1,21 @@
 # React Projects I made during learning React with Typescript.
 
+Demo: [React minis](https://wapenshaw.github.io/react-minis)
+
+---
+
+## Todo App
+
+## Dad Jokes
+
+## Youtube Search
+
 ## PokeDex
 
-Queries the Pokemon API, gets 10 Random pokemon, splits into 2 two hands, compares combined experience of both hand and declares a winner.
+## Card Dealer
 
-Demo: [PokeDex](https://wapenshaw.github.io/)
+## Coin Flip
+
+## Color Form
 
 ---
