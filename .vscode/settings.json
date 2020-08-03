@@ -18,6 +18,7 @@
 		"**/node_modules": true
 	},
 
+	"search.useReplacePreview": true,
 	// Extension Specific settings
 	"eslint.alwaysShowStatus": true,
 	"helium-icon-theme.activeIconPack": "react_redux",

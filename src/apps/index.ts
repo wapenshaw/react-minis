@@ -6,3 +6,5 @@ export { default as CardDeck } from './carddealer/Deck';
 export { default as DadJokes } from './dad-jokes/JokeList';
 export { default as TodoList } from './todo/TodoList';
 export { default as YoutubeSearch } from './youtube/YoutubeSearch';
+export { default as PokeGame } from './pokemon/PokeGame';
+export { default as MUITodo } from './mui-todo/TodoTwo';

@@ -4,9 +4,9 @@ import './App.css';
 import {
 	CardDeck,
 	CoinFlip,
-	ColorPlayground,
 	DadJokes,
-	DiceBoard,
+	MUITodo,
+	PokeGame,
 	TodoList,
 	YoutubeSearch,
 } from './apps';
@@ -26,13 +26,18 @@ const App: React.FunctionComponent = () => {
 					</NavLink>
 				</div>
 				<div className="App-NavElement">
+					<NavLink to="/dadjokes" exact activeClassName="App-NavActive">
+						Dad Jokes
+					</NavLink>
+				</div>
+				<div className="App-NavElement">
 					<NavLink to="/youtube" exact activeClassName="App-NavActive">
 						Youtube
 					</NavLink>
 				</div>
 				<div className="App-NavElement">
-					<NavLink to="/dadjokes" exact activeClassName="App-NavActive">
-						Dad Jokes
+					<NavLink to="/pokegame" exact activeClassName="App-NavActive">
+						PokeDex
 					</NavLink>
 				</div>
 				<div className="App-NavElement">
@@ -45,24 +50,16 @@ const App: React.FunctionComponent = () => {
 						Coin Flip
 					</NavLink>
 				</div>
-
-				<div className="App-NavElement">
-					<NavLink to="/colorform" exact activeClassName="App-NavActive">
-						Color Form
-					</NavLink>
-				</div>
 			</div>
-			<div className="App-Comp">
-				<Switch>
-					<Route exact path="/" component={DiceBoard} />
-					<Route exact path="/dadjokes" render={() => <DadJokes />} />
-					<Route exact path="/carddealer" component={CardDeck} />
-					<Route exact path="/coinflip" component={CoinFlip} />
-					<Route exact path="/colorform" component={ColorPlayground} />
-					<Route exact path="/todo" component={TodoList} />
-					<Route exact path="/youtube" component={YoutubeSearch} />
-				</Switch>
-			</div>
+			<Switch>
+				<Route exact path="/" component={MUITodo} />
+				<Route exact path="/dadjokes" render={() => <DadJokes />} />
+				<Route exact path="/carddealer" component={CardDeck} />
+				<Route exact path="/coinflip" component={CoinFlip} />
+				<Route exact path="/pokegame" component={PokeGame} />
+				<Route exact path="/todo" component={TodoList} />
+				<Route exact path="/youtube" component={YoutubeSearch} />
+			</Switch>
 		</div>
 	);
 };

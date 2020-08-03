@@ -3,22 +3,12 @@
 	"version": "0.1.0",
 	"private": false,
 	"dependencies": {
-		"@testing-library/jest-dom": "^5.11.2",
-		"@testing-library/react": "^10.4.7",
-		"@testing-library/user-event": "^12.1.0",
-		"@types/axios": "^0.14.0",
-		"@types/jest": "^26.0.8",
-		"@types/node": "^14.0.27",
-		"@types/react": "^16.9.43",
-		"@types/react-dom": "^16.9.8",
-		"@types/react-router-dom": "^5.1.5",
-		"@types/uuid": "^8.0.0",
+		"@material-ui/core": "^4.11.0",
+		"@material-ui/icons": "^4.9.1",
 		"axios": "0.18.1",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-router-dom": "^5.2.0",
-		"react-scripts": "3.4.1",
-		"typescript": "^3.9.7",
 		"uuid": "^8.3.0"
 	},
 	"scripts": {
@@ -45,6 +35,17 @@
 		]
 	},
 	"devDependencies": {
+		"@testing-library/jest-dom": "^5.11.2",
+		"@testing-library/react": "^10.4.7",
+		"@testing-library/user-event": "^12.1.0",
+		"@types/axios": "^0.14.0",
+		"@types/jest": "^26.0.8",
+		"@types/material-ui": "^0.21.7",
+		"@types/node": "^14.0.27",
+		"@types/react": "^16.9.43",
+		"@types/react-dom": "^16.9.8",
+		"@types/react-router-dom": "^5.1.5",
+		"@types/uuid": "^8.0.0",
 		"eslint-config-prettier": "^6.11.0",
 		"eslint-config-standard": "^14.1.1",
 		"eslint-import-resolver-typescript": "^2.2.0",
@@ -54,7 +55,9 @@
 		"eslint-plugin-promise": "^4.2.1",
 		"eslint-plugin-standard": "^4.0.1",
 		"gh-pages": "^3.1.0",
-		"prettier": "^2.0.5"
+		"prettier": "^2.0.5",
+		"react-scripts": "3.4.1",
+		"typescript": "^3.9.7"
 	},
 	"license": "ISC"
 }
