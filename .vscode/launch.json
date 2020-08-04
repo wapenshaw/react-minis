@@ -14,7 +14,8 @@
 			"webRoot": "${workspaceFolder}/src",
 			"sourceMapPathOverrides": {
 				"webpack:///src/*": "${webRoot}/*"
-			}
+			},
+			"skipFiles": ["<node_internals>/**"]
 		}
 	]
 }

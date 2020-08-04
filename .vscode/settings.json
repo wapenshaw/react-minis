@@ -7,12 +7,15 @@
 	"typescript.tsdk": "node_modules\\typescript\\lib", // Use Typescript Version in the Workspace
 	"debug.openExplorerOnEnd": true, // Whenever you stop the debug session, opens explorer view instead of staying in debug mode
 	"problems.decorations.enabled": true, // Error highlighing in explorer view
-	"files.autoSave": "off", // Just so that when you have the dev server running, any focus change will save -> recompile
+	"files.autoSave": "off",
+	"editor.semanticHighlighting.enabled": false, // Just so that when you have the dev server running, any focus change will save -> recompile
+
+	"typescript.tsserver.maxTsServerMemory": 8192,
 
 	"files.exclude": {
 		"**/.DS_Store": true,
 		"**/.git": true,
-		"**/node_modules": true
+		"**/node_modules": false
 	},
 	"search.exclude": {
 		"**/node_modules": true
@@ -36,13 +39,9 @@
 		"source.fixAll": true,
 		"source.organizeImports": false
 	},
-	"sophon-intellisense.agreeToCollectUserInfo": false,
+
 	"path-intellisense.extensionOnImport": false,
-	// Intellicode Settings
-	"vsintellicode.python.completionsEnabled": false,
-	"vsintellicode.sql.completionsEnabled": false,
-	"vsintellicode.features.python.deepLearning": "disabled",
-	"vsintellicode.java.completionsEnabled": false,
+
 	"editor.renameOnType": true,
 	"files.trimFinalNewlines": true,
 
